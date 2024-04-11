@@ -17,6 +17,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<script>
+  gtag('config', 'G-44QBL78MEQ', { 'debug_mode':true });
+  let sign = prompt("Enter your user_id for GA:");
+  if (sign) {
+    gtag('config', 'G-44QBL78MEQ', {
+  'user_id': sign
+});
+    console.log("tag is added (" + sign + ")");
+  }
+  
+</script>
 <h1>Landing web-page</h1>
 <div>
     <h2>Contact form</h2>
