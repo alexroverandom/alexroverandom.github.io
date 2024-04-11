@@ -2,92 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HYGF91GN7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-2HYGF91GN7');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W4DCKXNZ');</script>
+<!-- End Google Tag Manager -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://webtracking-v01.creatio.com/JS/track-cookies.js"></script>
-<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
-<script>
-
-/* Matomo Code */
-// var _paq = window._paq = window._paq || [];
-// var user_id = landing.contactId.value;
-// _paq.push(['setUserId', user_id]);
-
-// /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-// _paq.push(['trackPageView']);
-// _paq.push(['enableLinkTracking']);
-// (function() {
-//     var u="https://tscrmdev.matomo.cloud/";
-//     _paq.push(['setTrackerUrl', u+'matomo.php']);
-//     _paq.push(['setSiteId', '2']);
-//     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-//     g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/tscrmdev.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-// })();
-
-
-/**
-* Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
-* You can use #id or any other CSS selector that will define the input field explicitly.
-* Example: "Email": "#MyEmailField".
-* If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
-*/
-var config = {
-    fields: {
-		"FullName": "#name-field", // Name of a contact, submitting a case
-		"PhoneNumber": "#phone-field", // Contact's mobile phone
-		"Email": "#email-field", // Contact's email
-    },
-    contactFields: {
-        "FullName": "#name-field", // Name of a contact
-		"Phone": "#phone-field", // Contact's mobile phone
-		"Email": "#email-field", // Contact's email
-    },
-	customFields: {"WebFormId":"f8c07717-4966-47ef-b61b-93e9d9d6d325"},
-    landingId: "f8c07717-4966-47ef-b61b-93e9d9d6d325",
-    serviceUrl: "http://ts1-infr-web01:88/bs_bcj_l_menu_6393464_0325/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    redirectUrl: "*"
-    //customFields: {"WebFormId":"6046fc80-2d9e-488b-8e22-1eaa3eb788c4"},
-    //landingId: "6046fc80-2d9e-488b-8e22-1eaa3eb788c4",
-    //serviceUrl: "http://localhost:8082/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    //redirectUrl: ""
-};
-/**
-* The function below creates a object from the submitted data.
-* Bind this function call to the "onSubmit" event of the form or any other elements events.
-* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
-*/
-function createObject() {
-    // _paq.push([ function () {
-    //     var visitorId = this.getVisitorId();
-    //     var userId = this.getUserId();
-    //     if (!config.hasOwnProperty("trackingFields")) {
-    //         config.trackingFields = {};
-    //     }
-    //     config.trackingFields.MatomoVisitorId = visitorId;
-    //     config.trackingFields.MatomoUserId = userId;
-    //     landing.createObjectFromLanding(config);
-    // }]);
-	landing.createObjectFromLanding(config);
-}
-/**
-* The function below inits landing page using URL parameters.
-*/
-function initLanding() {
-    landing.initLanding(config);
-}
-jQuery(document).ready(initLanding);
-</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <h1>Landing web-page</h1>
 <div>
     <h2>Contact form</h2>
