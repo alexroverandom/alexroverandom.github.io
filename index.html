@@ -54,6 +54,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
 			gtag("set", {'user_id': sign + 'aa'});
+			gtag("config", 'G-2HYGF91GN7', { "test_user_id": sign + 'ccc' });
 			gtag("set", {'test_user_id': sign + 'bb'});
 			console.log("tag is added (" + sign + ")");
 		}
