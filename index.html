@@ -53,6 +53,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		console.log("form submitterd");
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
+			gtag("set", {'user_id': sign});
+			gtag("set", {'userId': sign});
 			gtag('config', 'G-2HYGF91GN7', {
 				'user_id': sign
 			});
