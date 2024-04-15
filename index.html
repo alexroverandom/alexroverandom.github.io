@@ -54,11 +54,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
 			gtag("set", {'user_id': sign + 'aa'});
-			gtag("set", {'userId': sign + 'bb'});
-			gtag('config', 'G-2HYGF91GN7', {
-				'user_id': sign + 'cc'
-			});
-			dataLayer.push({"userId": sign + 'dd'});
+			gtag("set", {'test_user_id': sign + 'bb'});
 			console.log("tag is added (" + sign + ")");
 		}
 	}
