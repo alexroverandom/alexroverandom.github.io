@@ -18,7 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-2HYGF91GN7', { 'debug_mode':true });
+  gtag('config', 'G-2HYGF91GN7');
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -54,7 +54,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
 			gtag("set", {'user_id': sign + 'aa'});
-			gtag("config", 'G-2HYGF91GN7', { "test_user_id": sign + 'ccc' });
 			gtag("set", {'test_user_id': sign + 'bb'});
 			console.log("tag is added (" + sign + ")");
 		}
