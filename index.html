@@ -53,17 +53,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		console.log("form submitterd");
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
-			gtag("set", {'user_id': sign});
-			gtag("set", {'userId': sign});
+			gtag("set", {'user_id': sign + 'aa'});
+			gtag("set", {'userId': sign + 'bb'});
 			gtag('config', 'G-2HYGF91GN7', {
-				'user_id': sign
+				'user_id': sign + 'cc'
 			});
-			dataLayer.push({"userId": sign});
+			dataLayer.push({"userId": sign + 'dd'});
 			console.log("tag is added (" + sign + ")");
 		}
 	}
 </script>
-<script>
+<!-- <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
@@ -75,7 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		  'user_id': 'xx000001'
 	  });
 	});
-  </script>
+  </script> -->
 <h1>Landing web-page</h1>
 <div>
     <h2>Contact form</h2>
