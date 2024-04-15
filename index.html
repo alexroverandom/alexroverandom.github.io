@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
 
-<!-- Google Tag Manager -->
+<!-- Google Tag Manager
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-W4DCKXNZ');</script>
-<!-- End Google Tag Manager -->
+<-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-44QBL78MEQ"></script>
-<!-- <script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HYGF91GN7"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-44QBL78MEQ');
-</script> -->
+  gtag('config', 'G-2HYGF91GN7', { 'debug_mode':true });
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 <!-- End Google Tag Manager (noscript) -->
 <!-- <script>
   gtag('config', 'G-44QBL78MEQ', { 'debug_mode':true });
@@ -36,6 +37,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
 </script> -->
+<script>
+	function createObject() {
+		console.log("form submitterd");
+		let sign = prompt("Enter your user_id for GA:");
+		if (sign) {
+			gtag('config', 'G-2HYGF91GN7', {
+				'user_id': sign
+			});
+			console.log("tag is added (" + sign + ")");
+		}
+	}
+</script>
 <h1>Landing web-page</h1>
 <div>
     <h2>Contact form</h2>
