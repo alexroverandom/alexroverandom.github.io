@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W4DCKXNZ');</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4DCKXNZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+<!-- End Google Tag Manager (noscript) -->
+<!-- <script>
+  gtag('config', 'G-44QBL78MEQ', { 'debug_mode':true });
+  let sign = prompt("Enter your user_id for GA:");
+  if (sign) {
+    gtag('config', 'G-44QBL78MEQ', {
+  'user_id': sign
+});
+    console.log("tag is added (" + sign + ")");
+  }
+
+</script> -->
+<script>
+	function createObject() {
+		console.log("form submitterd");
+		let sign = prompt("Enter your user_id for GA:");
+		if (sign) {
+			// gtag('config', 'G-2HYGF91GN7', {
+			// 	'user_id': sign + 'aa',
+			// 	'test_user_id': sign + 'bb',
+			// 	'user_code': sign
+			// });
+			gtag("set", {'user_id': sign + 'aa'});
+			gtag("set", {'test_user_id': sign + 'bb'});
+			gtag("set", {'user_code': sign + 'cc'});
+			console.log("tag is added (" + sign + ")");
+		}
+	}
+</script>
+<!-- <script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('get', 'G-2HYGF91GN7', 'session_id', (id) => {
+	  gtag('config', 'G-2HYGF91GN7', {
+		  'custom_session_id': id,
+		  'user_code': 'testUser'
+	  });
+	});
+  </script> -->
+  <h1>Dev 01</h1>
+<h1>Google tag manager</h1>
+<h2>
+	Test tags
+</h2>
+<p>Lorem ipsum dolor ...</p>
+<p>Lorem ipsum dolor ...</p>
+<h3>Some text</h3>
+<div>
+    <h2>Contact form</h2>
+	<form method="POST" class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+        Name:<br>
+        <input type="text" name="Name" id="name-field"><br>
+		Email:<br>
+        <input type="text" name="Email" id="email-field"><br><br><br>
+		Phone:<br>
+        <input type="text" name="Phone" id="phone-field"><br>
+		Account:<br>
+        <input type="text" name="Account" id="account-field"><br><br><br>
+		TestParam:<br>
+        <input type="text" name="TestParam" id="testparam-field"><br>
+		Subject:<br>
+        <input type="text" name="Subject" id="subject-field"><br>
+		Symptoms:<br>
+        <input type="text" name="Symptoms" id="symptoms-field">
+		<br><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
