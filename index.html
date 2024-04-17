@@ -17,12 +17,14 @@
 			if (sign) {
 				gtag("set", { 'user_id': sign + 'aa' });
 				gtag("set", { 'test_user_id': sign + 'bb' });
-				gtag("set", { 'user_code': sign + 'cc' });
+				gtag("config", measureId, { 'test_user_id': sign + 'bb' });
+				//gtag("set", { 'user_code': sign + 'cc' });
 				console.log("from init");
 			}
+			console.log(value);
 		}
 		gtag('js', new Date());
-		gtag('get', measureId, 'cid', function(value) {
+		gtag('get', measureId, 'client_id', function(value) {
 			initUserId(value);
 		})
 	</script>

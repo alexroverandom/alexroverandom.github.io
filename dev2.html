@@ -17,14 +17,16 @@
 			if (sign) {
 				gtag("set", { 'user_id': sign + 'aa' });
 				gtag("set", { 'test_user_id': sign + 'bb' });
-				gtag("set", { 'user_code': sign + 'cc' });
+				gtag("config", measureId, { 'test_user_id': sign + 'bb' });
+				//gtag("set", { 'user_code': sign + 'cc' });
 				console.log("from init");
 			}
+			console.log(value);
 		}
 		gtag('js', new Date());
 		gtag('get', measureId, 'cid', function(value) {
 			initUserId(value);
-		})
+		});
 	</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
