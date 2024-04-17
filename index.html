@@ -19,6 +19,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
 
   gtag('config', 'G-2HYGF91GN7');
+  gtag('get', 'G-2HYGF91GN7', 'session_id', (id) => {
+	  gtag('config', 'G-2HYGF91GN7', {
+		  'custom_session_id': id
+	  });
+	});
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -53,25 +58,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		console.log("form submitterd");
 		let sign = prompt("Enter your user_id for GA:");
 		if (sign) {
+			gtag('config', 'G-2HYGF91GN7', {
+				'user_id': sign + 'aa',
+				'test_user_id': sign + 'bb',
+				'user_code': sign
+			});
 			gtag("set", {'user_id': sign + 'aa'});
 			gtag("set", {'test_user_id': sign + 'bb'});
 			console.log("tag is added (" + sign + ")");
 		}
 	}
 </script>
-<!-- <script>
+<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
-	gtag('get', 'G-44QBL78MEQ', 'session_id', (id) => {
-	  gtag('config', 'G-44QBL78MEQ', {
-		  'custom_session_id': id
-	  });
-	  gtag('config', 'G-44QBL78MEQ', {
-		  'user_id': 'xx000001'
+	gtag('get', 'G-2HYGF91GN7', 'session_id', (id) => {
+	  gtag('config', 'G-2HYGF91GN7', {
+		  'custom_session_id': id,
+		  'user_code': 'testUser'
 	  });
 	});
-  </script> -->
+  </script>
 <h1>Landing web-page</h1>
 <div>
     <h2>Contact form</h2>
