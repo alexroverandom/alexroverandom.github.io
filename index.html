@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HYGF91GN7"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HYGF91GN7"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		const measureId = 'G-2HYGF91GN7';
@@ -30,11 +30,44 @@
 		gtag('get', measureId, 'client_id', function(value) {
 			initUserId(value);
 		})
+	</script> -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-44QBL78MEQ"></script>
+	<script>
+		const TAG_ID = 'G-44QBL78MEQ';
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag(){
+			dataLayer.push(arguments);
+		}
+
+		gtag('js', new Date());
+
+		const getSessionId = new Promise(resolve => {
+			gtag('get', TAG_ID, 'session_id', resolve);
+		});
+
+		const getClientId = new Promise(resolve => {
+			gtag('get', TAG_ID, 'client_id', resolve);
+		});
+
+		getClientId.then((clientId) => {
+			getSessionId.then((sessionId) => {
+				gtag('config', TAG_ID, {
+					'debug_mode': true,
+					'custom_session_id': `g${sessionId}`,
+					'custom_user_id': `g${clientId}`,
+					'user_properties': {
+						'custom_session_id': `g${sessionId}`,
+						'custom_user_id': `g${clientId}`,
+					}
+				});
+			});
+		});
 	</script>
 </head>
 
 <body>
-	<script>
+	<!-- <script>
 		function createObject() {
 			console.log("form submitterd");
 			let sign = prompt("Enter your user_id for GA:");
@@ -45,7 +78,7 @@
 				console.log("tag is added (" + sign + ")");
 			}
 		}
-	</script>
+	</script> -->
 	<!-- <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
