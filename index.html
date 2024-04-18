@@ -12,6 +12,9 @@
 			gtag('config', measureId, {
 				debug_mode: true,
 				user_code: 'user' + value,
+				user_properties: {
+					user_code: 'userA' + value,
+				}
 			});
 			let sign = prompt("Enter your user_id for GA from init:");
 			if (sign) {
