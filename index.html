@@ -43,6 +43,9 @@
 		gtag('js', new Date());
 
 		const getSessionId = new Promise(resolve => {
+			gtag('event', 'page_view', {
+				sa_time: new Date().getTime()
+			});
 			gtag('get', TAG_ID, 'session_id', resolve);
 		});
 
