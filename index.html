@@ -71,18 +71,21 @@
 </head>
 
 <body>
-	<!-- <script>
+	<script>
 		function createObject() {
 			console.log("form submitterd");
-			let sign = prompt("Enter your user_id for GA:");
-			if (sign) {
-				gtag("set", { 'user_id': sign + 'aa' });
-				gtag("set", { 'test_user_id': sign + 'bb' });
-				gtag("set", { 'user_code': sign + 'cc' });
-				console.log("tag is added (" + sign + ")");
-			}
+			gtag("event", "sa_time", {
+				"sa_time": new Date().getTime()
+			});
+			// let sign = prompt("Enter your user_id for GA:");
+			// if (sign) {
+			// 	gtag("set", { 'user_id': sign + 'aa' });
+			// 	gtag("set", { 'test_user_id': sign + 'bb' });
+			// 	gtag("set", { 'user_code': sign + 'cc' });
+			// 	console.log("tag is added (" + sign + ")");
+			// }
 		}
-	</script> -->
+	</script>
 	<!-- <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
