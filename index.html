@@ -35,17 +35,23 @@
 	<script>
 		const TAG_ID = 'G-44QBL78MEQ';
 		window.dataLayer = window.dataLayer || [];
+		window.creatioData = {
+			time: new Date().getTime()
+		};
+		setInterval(() => {
+			window.creatioData.time = new Date().getTime();
+		}, 100);
 
-		function gtag(){
+		function gtag() {
 			dataLayer.push(arguments);
 		}
 
 		gtag('js', new Date());
 
 		const getSessionId = new Promise(resolve => {
-			gtag('event', 'page_view', {
-				sa_time: new Date().getTime()
-			});
+			// gtag('event', 'page_view', {
+			// 	sa_time: new Date().getTime()
+			// });
 			gtag('get', TAG_ID, 'session_id', resolve);
 		});
 
@@ -59,15 +65,22 @@
 					'debug_mode': true,
 					'custom_session_id': `g${sessionId}`,
 					'custom_user_id': `g${clientId}`,
-					'user_properties': {
-						'custom_session_id': `g${sessionId}`,
-						'custom_user_id': `g${clientId}`,
-					}
+					'sa_time': window.creatioData.time,
+					// 'user_properties': {
+					// 	'custom_session_id': `g${sessionId}`,
+					// 	'custom_user_id': `g${clientId}`,
+					// }
 				});
 				console.log("client id is " + clientId);
 			});
 		});
 	</script>
+	<script>
+		window.TAG_ID = 'G-VCF8X5W0DC';
+	</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCF8X5W0DC"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/crt-gtag.js"></script>
 </head>
 
 <body>
