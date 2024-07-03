@@ -138,7 +138,10 @@ function extendTrackingData(googleClientId) {
 	}
 
 	const getSessionId = new Promise(resolve => {
-		gtag('get', tagId, 'session_id', resolve);
+		gtag('get', tagId, 'session_id', function() {});
+		setTimeout(function() {
+			return resolve();
+		}, 2000);
 	});
 
 	const getClientId = new Promise(resolve => {
