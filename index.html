@@ -31,8 +31,10 @@
 			initUserId(value);
 		})
 	</script> -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-44QBL78MEQ"></script>
-	<script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-44QBL78MEQ"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+	<!-- <script>
 		const TAG_ID = 'G-44QBL78MEQ';
 		window.dataLayer = window.dataLayer || [];
 		window.creatioData = {
@@ -74,13 +76,88 @@
 				console.log("client id is " + clientId);
 			});
 		});
-	</script>
+	</script> -->
 	<script>
 		window.TAG_ID = 'G-VCF8X5W0DC';
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCF8X5W0DC"></script>
 	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
-	<script src="https://webtracking-v01.creatio.com/JS/crt-gtag.js"></script>
+	<!-- <script src="https://webtracking-v01.creatio.com/JS/crt-gtag.js"></script> -->
+
+
+	<script>
+function createOrReplaceInput(inputName, inputValue, formSelector, currentForm) {
+	var existingInput = jQuery(formSelector + " input[name='" + inputName + "']")[0];
+	if (existingInput) {
+		existingInput.value = inputValue;
+	} else {
+		var newInput = document.createElement('input');
+		newInput.setAttribute('type', 'hidden');
+		newInput.setAttribute('name', inputName);
+		newInput.setAttribute('value', inputValue);
+
+		currentForm.appendChild(newInput);
+	}
+}
+/* The function below pass TrackingUserId from GoogleAnalytics to data for sending to Creatio. */
+function extendTrackingData(googleClientId) {
+	googleClientId = googleClientId || "";
+	const googleTrackingSystemId = '310174AE-1DF5-4BB1-8955-474548D52666';
+	console.log("defineVisitor:Started", googleClientId);
+	var currentUrl = window.location.href;
+	//foreach form add hidden fields with names: TrackingUserId , PageUrl, TrackingId
+	var formsCollection = document.getElementsByTagName('form');
+	for (var i = 0; i < formsCollection.length; i++) {
+		var formSelector = "";
+		if (formsCollection[i].id) {
+			formSelector = "#" + formsCollection[i].id;
+		} else if (formsCollection[i].name) {
+			formSelector = "form[name='" + formsCollection[i].name + "']";
+		}
+		createOrReplaceInput("TrackingUserId", googleClientId, formSelector, formsCollection[i]);
+		createOrReplaceInput("PageUrl", currentUrl, formSelector, formsCollection[i]);
+		createOrReplaceInput("TrackingId", googleTrackingSystemId, formSelector, formsCollection[i]);
+	}
+}
+
+(async () => {
+	window.dataLayer = window.dataLayer || [];
+
+	const defaultGtag = function () {
+		dataLayer.push(arguments);
+	};
+
+	window.gtag = window.gtag || defaultGtag;
+
+	gtag('js', new Date());
+
+	const tagId = `${window.TAG_ID}`;
+	if (!tagId) {
+		console.warn('TAG_ID is not set.\nPlease specify the tag using the script below:\n\n<script>\n\twindow.TAG_ID = "G-.........."\n<\/script>');
+		return;
+	}
+
+	const getSessionId = new Promise(resolve => {
+		gtag('get', tagId, 'session_id', resolve);
+	});
+
+	const getClientId = new Promise(resolve => {
+		gtag('get', tagId, 'client_id', resolve);
+	});
+
+	const clientId = await getClientId;
+	const sessionId = await getSessionId;
+	jQuery(document).ready(extendTrackingData.bind(this, clientId));
+	const contactId = landing && landing.contactId && landing.contactId.value;
+
+	const customConfig = {
+		'crt_session_id': `${clientId}::${sessionId}`,
+		'crt_user_id': contactId || ''
+	};
+	gtag('config', tagId, customConfig);
+})();
+	</script>
+
 </head>
 
 <body>
