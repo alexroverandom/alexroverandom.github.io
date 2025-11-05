@@ -3,88 +3,19 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HYGF91GN7"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		const measureId = 'G-2HYGF91GN7';
-		function gtag() { dataLayer.push(arguments); }
-		function initUserId(value) {
-			gtag('config', measureId, {
-				debug_mode: true,
-				user_code: 'user' + value,
-				user_properties: {
-					user_code: 'userA' + value,
-				}
-			});
-			let sign = prompt("Enter your user_id for GA from init:");
-			if (sign) {
-				gtag("set", { 'user_id': sign + 'aa' });
-				gtag("set", { 'test_user_id': sign + 'bb' });
-				gtag("config", measureId, { 'test_user_id': sign + 'bb' });
-				//gtag("set", { 'user_code': sign + 'cc' });
-				console.log("from init");
-			}
-			console.log(value);
-		}
-		gtag('js', new Date());
-		gtag('get', measureId, 'client_id', function(value) {
-			initUserId(value);
-		})
-	</script> -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-44QBL78MEQ"></script> -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
 	<!-- <script>
-		const TAG_ID = 'G-44QBL78MEQ';
-		window.dataLayer = window.dataLayer || [];
-		window.creatioData = {
-			time: new Date().getTime()
-		};
-		setInterval(() => {
-			window.creatioData.time = new Date().getTime();
-		}, 100);
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-
-		gtag('js', new Date());
-
-		const getSessionId = new Promise(resolve => {
-			// gtag('event', 'page_view', {
-			// 	sa_time: new Date().getTime()
-			// });
-			gtag('get', TAG_ID, 'session_id', resolve);
-		});
-
-		const getClientId = new Promise(resolve => {
-			gtag('get', TAG_ID, 'client_id', resolve);
-		});
-
-		getClientId.then((clientId) => {
-			getSessionId.then((sessionId) => {
-				gtag('config', TAG_ID, {
-					'debug_mode': true,
-					'custom_session_id': `g${sessionId}`,
-					'custom_user_id': `g${clientId}`,
-					'sa_time': window.creatioData.time,
-					// 'user_properties': {
-					// 	'custom_session_id': `g${sessionId}`,
-					// 	'custom_user_id': `g${clientId}`,
-					// }
-				});
-				console.log("client id is " + clientId);
-			});
-		});
-	</script> -->
-	<script>
 		window.TAG_ID = 'G-VCF8X5W0DC';
 	</script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCF8X5W0DC"></script>
-	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script> -->
 	<!-- <script src="https://webtracking-v01.creatio.com/JS/crt-gtag.js"></script> -->
-
-
+	<script>
+		window.TAG_ID = 'G-ENP0671R6K';
+	</script>
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ENP0671R6K"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
+	<script src="https://webtracking-v01.creatio.com/JS/crt-gtag.js"></script>
+<!--
 	<script>
 function createOrReplaceInput(inputName, inputValue, formSelector, currentForm) {
 	var existingInput = jQuery(formSelector + " input[name='" + inputName + "']")[0];
@@ -156,7 +87,7 @@ function extendTrackingData(googleClientId) {
 	};
 	gtag('config', tagId, customConfig);
 })();
-	</script>
+	</script> -->
 
 </head>
 
