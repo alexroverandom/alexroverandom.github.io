@@ -12,46 +12,7 @@
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://webtracking-v01.creatio.com/JS/track-cookies.js"></script>
 <script src="https://webtracking-v01.creatio.com/JS/create-object.js"></script>
-	<script>
 
-/**
-* Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
-* You can use #id or any other CSS selector that will define the input field explicitly.
-* Example: "Email": "#MyEmailField".
-* If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
-*/
-var config = {
-    fields: {
-        "FullName": "#name-field", // Name of a contact
-        "PhoneNumber": "#phone-field", // Contact's mobile phone
-        "Email": "#email-field" // Contact's email
-    },
-    contactFields: {
-        "FullName": "#name-field", // Name of a contact
-        "Phone": "#phone-field", // Contact's mobile phone
-        "Email": "#email-field" // Contact's email
-    },
-    customFields: {"WebFormId":"cf9036d6-1b26-45b1-b007-a72003fa4771"},
-    landingId: "cf9036d6-1b26-45b1-b007-a72003fa4771",
-    serviceUrl: "https://180318-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-    redirectUrl: ""
-};
-/**
-* The function below creates a object from the submitted data.
-* Bind this function call to the "onSubmit" event of the form or any other elements events.
-* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
-*/
-function createObject() {
-    landing.createObjectFromLanding(config);
-}
-/**
-* The function below inits landing page using URL parameters.
-*/
-function initLanding() {
-    landing.initLanding(config);
-}
-jQuery(document).ready(initLanding);
-</script>
 <!--
 	<script>
 function createOrReplaceInput(inputName, inputValue, formSelector, currentForm) {
@@ -168,6 +129,46 @@ function extendTrackingData(googleClientId) {
 			<input type="submit" value="Submit">
 		</form>
 	</div>
+	<script>
+
+/**
+* Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
+* You can use #id or any other CSS selector that will define the input field explicitly.
+* Example: "Email": "#MyEmailField".
+* If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
+*/
+var config = {
+    fields: {
+        "FullName": "#name-field", // Name of a contact
+        "PhoneNumber": "#phone-field", // Contact's mobile phone
+        "Email": "#email-field" // Contact's email
+    },
+    contactFields: {
+        "FullName": "#name-field", // Name of a contact
+        "Phone": "#phone-field", // Contact's mobile phone
+        "Email": "#email-field" // Contact's email
+    },
+    customFields: {"WebFormId":"cf9036d6-1b26-45b1-b007-a72003fa4771"},
+    landingId: "cf9036d6-1b26-45b1-b007-a72003fa4771",
+    serviceUrl: "https://180318-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+    redirectUrl: ""
+};
+/**
+* The function below creates a object from the submitted data.
+* Bind this function call to the "onSubmit" event of the form or any other elements events.
+* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+*/
+function createObject() {
+    landing.createObjectFromLanding(config);
+}
+/**
+* The function below inits landing page using URL parameters.
+*/
+function initLanding() {
+    landing.initLanding(config);
+}
+jQuery(document).ready(initLanding);
+</script>
 </body>
 
 </html>
